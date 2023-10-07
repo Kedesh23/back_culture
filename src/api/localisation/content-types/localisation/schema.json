@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "localisations",
+  "info": {
+    "singularName": "localisation",
+    "pluralName": "localisations",
+    "displayName": "Localisation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pays": {
+      "type": "string"
+    },
+    "ville": {
+      "type": "string"
+    },
+    "province": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "localisation"
+    }
+  }
+}

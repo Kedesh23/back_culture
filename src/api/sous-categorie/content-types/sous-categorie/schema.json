@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sous_categories",
+  "info": {
+    "singularName": "sous-categorie",
+    "pluralName": "sous-categories",
+    "displayName": "Sous-categorie"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Libelle": {
+      "type": "string"
+    },
+    "acteurs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::acteur.acteur",
+      "mappedBy": "sous_categories"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "groupes",
+  "info": {
+    "singularName": "groupe",
+    "pluralName": "groupes",
+    "displayName": "groupe"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string"
+    },
+    "date_de_creation": {
+      "type": "string"
+    },
+    "acteurs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::acteur.acteur",
+      "mappedBy": "groupes"
+    }
+  }
+}

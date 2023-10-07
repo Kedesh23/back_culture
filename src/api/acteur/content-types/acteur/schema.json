@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "acteurs",
+  "info": {
+    "singularName": "acteur",
+    "pluralName": "acteurs",
+    "displayName": "Acteur",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nom": {
+      "type": "string"
+    },
+    "Prenom": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "email"
+    },
+    "nom_artiste": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "phone_personel": {
+      "type": "string"
+    },
+    "phone_public": {
+      "type": "string"
+    },
+    "image_profil": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "nationalite": {
+      "type": "string"
+    },
+    "album": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "categorie": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::categorie.categorie",
+      "inversedBy": "acteur"
+    },
+    "sous_categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sous-categorie.sous-categorie",
+      "inversedBy": "acteurs"
+    },
+    "groupes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::groupe.groupe",
+      "inversedBy": "acteurs"
+    }
+  }
+}
